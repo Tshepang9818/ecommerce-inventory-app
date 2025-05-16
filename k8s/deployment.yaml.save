@@ -1,0 +1,25 @@
+# k8s/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecommerce-inventory
+spec:
+  replicas: 2
+  selector:z
+    matchLabels:t
+      app: invento  template:
+    metadata:
+      labels:
+        app: inventory
+    spec:
+      containers:
+      - name: inventory-container
+        image: ecommerce-inventory-app:latest
+        ports:        - containerPort: 5000
+
+
+
+
+
+
+

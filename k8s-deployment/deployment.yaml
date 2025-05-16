@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecommerce-inventory-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ecommerce-inventory
+  template:
+    metadata:
+      labels:
+        app: ecommerce-inventory
+    spec:
+      containers:
+      - name: inventory-container
+        image: ecommerce-inventory-app:latest  # Ensure this image is available locally or in your container registry
+        ports:
+        - containerPort: 5000
